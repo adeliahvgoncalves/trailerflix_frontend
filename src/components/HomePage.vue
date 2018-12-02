@@ -1,15 +1,23 @@
 <template>
     <div>
         <app-searchbar></app-searchbar>
-         <v-layout row>
-              <v-flex xs6 order-lg2>
+         <v-container grid-list-md text-xs-center>
+         <v-layout row wrap>
+            <!-- <v-flex xs6 d-flex> -->
+            <v-flex
+              v-for="card in cards"
+              :key="card.id"
+              xs6
+            >
                 <app-card
-                    v-for="card in cards" 
+                    
                     v-bind:card="card"
                     v-bind:key=card.id
                 ></app-card>
               </v-flex>
          </v-layout>
+         </v-container>
+         <app-footer></app-footer>
     </div>
 </template>
 
@@ -18,9 +26,10 @@
 
 import AppSearchbar from './AppSearchbar'
 import AppCard from './AppCard'
+import AppFooter from './AppFooter'
 
 export default {
- components: {AppSearchbar, AppCard},
+ components: {AppSearchbar, AppCard, AppFooter},
  data () {
      return {
         cards: [
@@ -33,6 +42,15 @@ export default {
  } 
 }
 </script>
+
+<style>
+    
+    body {
+  background: black;
+}
+</style>
+
+
 
 
 

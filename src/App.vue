@@ -1,23 +1,18 @@
 <template>
-  <div id="app">
 <v-app dark>
 
-
+  <div id="app">
     <router-view/>
-    </v-app>
   </div>
+  </v-app>
 </template>
 
 
 <script>
-import HomePage from './components/HomePage'
+
 export default {
-  name: 'app',
-  data () {
-    
-  },
-  components: {
-      'homePage': HomePage
-  }
+  name: 'app'
 }
 </script>
+
+

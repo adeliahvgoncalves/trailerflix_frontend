@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '../components/HomePage.vue'
 import AppLogin from '../components/AppLogin.vue'
+import AppStartpage from '../components/AppStartpage.vue'
+import AppTrailer from '../components/AppTrailer.vue'
 
 Vue.use(Router)
 
@@ -11,21 +13,23 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'appStartpage',
+      component: AppStartpage
+    },
+    {
+      path: '/homePage',
       name: 'homePage',
       component: HomePage
     },
     {
-      path: '/',
+      path: '/login',
       name: 'AppLogin',
       component: AppLogin
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      path: '/trailer/:id',
+      name: 'trailer',
+      component: AppTrailer 
     }
   ]
 })
