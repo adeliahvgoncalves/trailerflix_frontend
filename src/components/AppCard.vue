@@ -1,5 +1,4 @@
 <template>
-
   <v-card
     class="mx-auto elevation-20"
     color="purple"
@@ -10,9 +9,9 @@
       <v-flex xs8>
         <v-card-title primary-title>
           <div>
-            <div class="headline">Halycon Days</div>
-            <div>Ellie Goulding</div>
-            <div>(2013)</div>
+            <div class="headline">N: {{ card.name }}</div>
+            <div>A:Ellie Goulding</div>
+            <div>Y:(2013)</div>
           </div>
         </v-card-title>
       </v-flex>
@@ -29,10 +28,10 @@
       Rate this album
       <v-spacer></v-spacer>
       <span class="grey--text text--lighten-2 caption mr-2">
-        ({{ rating }})
+        R({{ card.rating }})
       </span>
       <v-rating
-        v-model="rating"
+        v-model="card.rating"
         background-color="white"
         color="yellow accent-4"
         dense
@@ -40,14 +39,19 @@
         hover
         size="18"
       ></v-rating>
+      <v-spacer></v-spacer>
+            <v-btn icon class="mr-0">
+              <v-icon>mdi-chevron-right</v-icon>
+            </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
   export default {
-    data: () => ({
-      rating: 4.3
-    })
+    props: ['card']
+    // data: () => ({
+    //   rating: 4.3
+    // })
   }
 </script>

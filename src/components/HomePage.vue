@@ -1,10 +1,15 @@
 <template>
     <div>
         <app-searchbar></app-searchbar>
-        <app-card
-            v-for="card in cards" 
-            :key=card.id
-        ></app-card>
+         <v-layout row>
+              <v-flex xs6 order-lg2>
+                <app-card
+                    v-for="card in cards" 
+                    v-bind:card="card"
+                    v-bind:key=card.id
+                ></app-card>
+              </v-flex>
+         </v-layout>
     </div>
 </template>
 
@@ -19,10 +24,10 @@ export default {
  data () {
      return {
         cards: [
-            {id: 1, name: "lol1"}, 
-            {id: 2, name: "lol2"}, 
-            {id: 3, name: "lol3"}, 
-            {id: 4, name: "lol4"}
+            {id: 1, rating: 5, name: "name 1"},
+            {id: 2, rating: 3, name: "name 2"}, 
+            {id: 3, rating: 2, name: "name 3"}, 
+            {id: 4, rating: 4, name: "name 4"}
         ]
     }
  } 
