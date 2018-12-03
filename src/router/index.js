@@ -27,7 +27,7 @@ export default new Router({
       component: AppLogin
     },
     {
-      path: '/trailer/:id',
+      path: '/trailer/:trailerID',
       name: 'trailer',
       component: AppTrailer 
     }

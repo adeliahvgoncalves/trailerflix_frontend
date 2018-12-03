@@ -10,9 +10,8 @@
       <v-flex xs8>
         <v-card-title primary-title>
           <div>
-            <div class="headline">: {{ card.name }}</div>
-            <div>A:Ellie Goulding</div>
-            <div>Y:(2013)</div>
+            <div class="headline">: {{ trailer.name }}</div>
+            <div>{{ trailer.category }}</div>
           </div>
         </v-card-title>
       </v-flex>
@@ -29,10 +28,10 @@
       Rate this album
       <v-spacer></v-spacer>
       <span class="grey--text text--lighten-2 caption mr-2">
-        ({{ card.rating }})
+        ({{ trailer.rating }})
       </span>
       <v-rating
-        v-model="card.rating"
+        v-model="trailer.rating"
         background-color="white"
         color="yellow accent-4"
         dense
@@ -42,9 +41,8 @@
         size="18"
       ></v-rating>
       <v-spacer></v-spacer>
-      <router-link
-        to="/trailer/:id"
-      >
+    
+      <router-link :to="{ name: 'trailer', params: { trailerID: trailer.id }}">
             <v-btn icon 
             class="mr-0"
             color=#263238 >
@@ -57,6 +55,7 @@
 
 <script>
   export default {
-    props: ['card']
+    props: ['trailer']
+    
   }
 </script>
