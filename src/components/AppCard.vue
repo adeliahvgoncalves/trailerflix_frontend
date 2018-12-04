@@ -1,10 +1,7 @@
 <template>
   <v-card
     class="mx-auto elevation-20"
-    color="blue-grey lighten-3"
-    style="max-width: 400px;padding:0px"
-    dark
-        
+    style="max-width: 400px;padding:0px"      
   >
     <v-layout justify-space-between>
       <v-flex xs8>
@@ -27,12 +24,11 @@
     <v-card-actions class="pa-3">
       Rate this album
       <v-spacer></v-spacer>
-      <span class="grey--text text--lighten-2 caption mr-2">
+    <div class="ml-2 grey--text text--darken-2">
         ({{ trailer.rating }})
-      </span>
+      </div>
       <v-rating
         v-model="trailer.rating"
-        background-color="white"
         color="yellow accent-4"
         dense
         half-increments
@@ -41,14 +37,11 @@
         size="18"
       ></v-rating>
       <v-spacer></v-spacer>
-    
       <router-link :to="{ name: 'trailer', params: { trailerID: trailer.id }}">
-            <v-btn icon 
-            class="mr-0"
-            color=#263238 >
-              <v-icon color=#FFFFFF>mdi-chevron-right</v-icon>
-            </v-btn>
-              </router-link>
+          <v-btn  icon class="mr-0">
+           <v-icon dark >mdi-chevron-right</v-icon>
+          </v-btn>
+       </router-link>
     </v-card-actions>
   </v-card>
 </template>
