@@ -21,9 +21,8 @@
               </v-avatar>
             </v-badge>
             <v-avatar color="indigo">
-      <v-icon dark>account_circle</v-icon>
-    </v-avatar>
-
+              <v-icon dark>account_circle</v-icon>
+            </v-avatar>
           </v-toolbar>
         </div>
       </v-layout>
