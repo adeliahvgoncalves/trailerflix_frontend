@@ -3,37 +3,33 @@
         <app-searchbar></app-searchbar>
         <v-container grid-list-md text-xs-center>
             <v-layout row wrap>
-                <!-- <v-flex xs6 d-flex> -->
                 <v-flex v-for="trailer in trailers" :key="trailer.id" xs6>
                     <app-card v-bind:trailer="trailer" v-bind:key=trailer.id></app-card>
                 </v-flex>
             </v-layout>
         </v-container>
-          <v-layout row justify-end>
-    <v-dialog v-model="dialog" scrollable max-width="300px">
-      <v-btn slot="activator" color="purple" dark>Subscribe Interests</v-btn>
-      <v-card>
-        <v-card-title>Select a Category</v-card-title>
-        <v-divider></v-divider>
-        <v-card-text style="height: 300px;">
-            <v-checkbox v-model="selected" multiple label="Comedy" value="comedy"></v-checkbox>
-            <v-checkbox v-model="selected" multiple label="Romantic" value="romantic"></v-checkbox>
-            <v-checkbox v-model="selected" multiple label="Fiction" value="fiction"></v-checkbox>
-            <v-checkbox v-model="selected" multiple label="Sci-Fi" value="scifi"></v-checkbox>
-            <v-checkbox v-model="selected" multiple label="Action" value="action"></v-checkbox>
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-actions>
-            <router-link to="/homePage">
-          <v-btn color="purple" dark flat @click="dialog = true">Close</v-btn>
-           </router-link>
-             <router-link to="/homePage">
-          <v-btn color="purple" dark flat @click="dialog = false">Save</v-btn>
-          </router-link>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-layout>
+        <v-layout row justify-end>
+            <v-dialog v-model="dialog" scrollable max-width="300px">
+                <v-btn slot="activator" color="purple" dark>Subscribe Interests</v-btn>
+                <v-card>
+                    <v-card-title>Select a Category</v-card-title>
+                    <v-divider></v-divider>
+                    <v-list-tile v-for="category in categories" :key="category.id">
+                        <v-list-tile-content>
+                            <v-checkbox :value="category.name" :key="category.id" :label="category.name" v-model="selected">
+                            </v-checkbox>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-divider></v-divider>
+                    <v-card-actions>
+                     
+                            <v-btn color="purple" dark flat @click="dialog = true" to="/homePage">Close</v-btn>
+                            <v-btn color="purple" dark flat @click="dialog = false">Save</v-btn>
+                       
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+        </v-layout>
         <app-footer></app-footer>
     </div>
 </template>
@@ -52,10 +48,31 @@
         },
         data() {
             return {
-                categories:[{
-                    id:1,
-                    category: "Comedy"
-                }],
+                categories: [{
+                    id: 1,
+                    name: "Comedy"
+                },
+                {
+                    id: 2,
+                    name: "Romantic"
+                },
+                {
+                    id: 3,
+                    name: "Action"
+                },
+                {
+                    id: 4,
+                    name: "Sci-Fi"
+                },
+                {
+                    id: 5,
+                    name: "Terror"
+                },
+                {
+                    id: 6,
+                    name: "Drama"
+                },
+                ],
                 trailers: [{
                         id: 1,
                         rating: 5,
@@ -82,9 +99,9 @@
                     }
                 ]
             }
-            
+    
         }
-        
+    
     }
 </script>
 

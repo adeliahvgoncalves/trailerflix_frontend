@@ -4,31 +4,22 @@
       <v-layout row child-flex wrap>
         <div>
           <v-toolbar>
-            <v-btn icon class="hidden-xs-only">
-              <v-icon>arrow_back</v-icon>
-            </v-btn>
-
-            <v-toolbar-title>Title</v-toolbar-title>
-
+            <v-toolbar-title>Search</v-toolbar-title>
             <v-spacer></v-spacer>
-
             <v-btn icon class="hidden-xs-only">
               <v-icon>search</v-icon>
             </v-btn>
           </v-toolbar>
         </div>
-
-        <div style="flex-basis: 20%">
+        <div style="flex-basis: 5%">
           <v-toolbar dark>
             <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>reply</v-icon>
-            </v-btn>
-
-            <v-btn icon>
-              <v-icon>more_vert</v-icon>
-            </v-btn>
+            <v-badge overlap>
+              <span slot="badge">3</span>
+              <v-avatar color="purple red--after">
+                <v-icon dark>notifications</v-icon>
+              </v-avatar>
+            </v-badge>
           </v-toolbar>
         </div>
       </v-layout>
