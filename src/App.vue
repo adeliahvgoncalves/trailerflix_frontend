@@ -18,10 +18,6 @@ export default {
 }
 </script>
 <style>
-body {
-    background-image: url('./assets/moviestiles.jpg');
-    background-size: cover;
-}
 
 #startpage{
   background-image: url('./assets/moviestiles.jpg');
@@ -29,9 +25,7 @@ body {
     padding-bottom: 100%;
  opacity: 0.8;
 }
-#homepage{
-  background:none;
-}
+
 </style>
 
 
