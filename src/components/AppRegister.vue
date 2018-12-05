@@ -1,15 +1,41 @@
 <template>
     <div id="startpage">
         <v-content>
-            <form>
-                <v-text-field v-validate="'required|max:10'" v-model="name" :counter="10" :error-messages="errors.collect('name')" label="Name" data-vv-name="name" required></v-text-field>
-                <v-text-field v-validate="'required|email'" v-model="email" :error-messages="errors.collect('email')" label="E-mail" data-vv-name="email" required></v-text-field>
-                <v-select v-validate="'required'" :items="items" v-model="select" :error-messages="errors.collect('select')" label="Select" data-vv-name="select" required></v-select>
-                <v-checkbox v-validate="'required'" v-model="checkbox" :error-messages="errors.collect('checkbox')" value="1" label="Option" data-vv-name="checkbox" type="checkbox" required></v-checkbox>
-    
-                <v-btn @click="submit">submit</v-btn>
-                <v-btn @click="clear">clear</v-btn>
-            </form>
+            <v-container fluid fill-height>
+                <v-layout align-center justify-center>
+                    <v-card height="500px"></v-card>
+                    <v-flex xs4 class="grey lighten-4">
+                        <v-container style="position: relative;top: 13%;" class="text-xs-center">
+                            <v-card flat>
+                                <v-card-title primary-title>
+                                    <h4>Registration</h4>
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-form>
+                                        <v-text-field v-model="name" :error-messages="nameErrors"  label="Name" required @input="$v.name.$touch()" @blur="$v.name.$touch()"></v-text-field>
+                                        <v-text-field v-model="email" :error-messages="emailErrors" label="E-mail" required @input="$v.email.$touch()" @blur="$v.email.$touch()"></v-text-field>
+                                        <v-text-field v-model="password" :error-messages="emailErrors" label="Password" required @input="$v.email.$touch()" @blur="$v.email.$touch()"></v-text-field>
+                                        <v-text-field v-model="confirmpassword" :error-messages="emailErrors" label="Confirm Password" required @input="$v.email.$touch()" @blur="$v.email.$touch()"></v-text-field>
+                                        <v-checkbox v-model="checkbox" :error-messages="checkboxErrors" label="Upgrade for Premium?" required @change="$v.checkbox.$touch()" @blur="$v.checkbox.$touch()"></v-checkbox>
+                                        <v-card-actions>
+                                            <div>
+                                            <router-link to="/">
+                                                <v-btn color="purple" dark>Back</v-btn>
+                                            </router-link>
+                                            </div>
+                                            <div>
+                                             <router-link to="/homePage">
+                                                <v-btn color="purple" dark>Registration</v-btn>
+                                            </router-link>
+                                            </div>
+                                        </v-card-actions>
+                                    </v-form>
+                                </v-card-text>
+                            </v-card>
+                        </v-container>
+                    </v-flex>
+                </v-layout>
+            </v-container>
         </v-content>
         <app-footer></app-footer>
     </div>

@@ -26,7 +26,8 @@ body {
 #startpage{
   background-image: url('./assets/moviestiles.jpg');
     background-repeat: repeat;
-    padding-bottom: 100%
+    padding-bottom: 100%;
+ opacity: 0.8;
 }
 #homepage{
   background:none;

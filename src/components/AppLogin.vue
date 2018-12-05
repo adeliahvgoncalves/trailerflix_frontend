@@ -16,7 +16,7 @@
                   <v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
             <v-card-actions>
                <router-link to="/homePage">
-              <v-btn primary>Login</v-btn>
+              <v-btn color="purple" dark>Login</v-btn>
                </router-link>
             </v-card-actions>
             </v-form>

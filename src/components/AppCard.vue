@@ -7,7 +7,7 @@
       <v-flex xs8>
         <v-card-title primary-title>
           <div>
-            <div class="headline">: {{ trailer.name }}</div>
+            <div class="headline"> {{ trailer.name }}</div>
             <div>{{ trailer.category }}</div>
           </div>
         </v-card-title>

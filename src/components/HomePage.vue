@@ -16,7 +16,7 @@
                     <v-divider></v-divider>
                     <v-list-tile v-for="category in categories" :key="category.id">
                         <v-list-tile-content>
-                            <v-checkbox :value="category.name" :key="category.id" :label="category.name" v-model="selected">
+                            <v-checkbox value="category.name" :key="category.id" :label="category.name" v-model="selected">
                             </v-checkbox>
                         </v-list-tile-content>
                     </v-list-tile>

@@ -1,12 +1,15 @@
 <template>
 <div id="startpage">
   <v-container>
-    <div class="text-xs-center">
+    <div class="text-xs-center" style="margin-top:3%">
       <v-layout row child-flex wrap>
-        <h1 style="color:white"> Trailerflix </h1>
+        <div style="text-align:center">
+        <h1 style="color:white; font-size:60px"> Trailerflix </h1>
+        </div>
+        <div style="vertical-align: middle;margin-top:2%">
         <router-link to="/register">
           <v-bottom-sheet>
-            <v-btn slot="activator" color="purple" dark>
+            <v-btn slot="activator" color="purple" dark >
               Register
             </v-btn>
           </v-bottom-sheet>
@@ -18,6 +21,7 @@
             </v-btn>
           </v-bottom-sheet>
         </router-link>
+        </div>
       </v-layout>
     </div>
     <app-footer></app-footer>
@@ -38,8 +42,5 @@
 </script>
 
 <style>
-body {
-    background-image: url('../assets/moviestiles.jpg');
-    background-size: cover;
-  }
+
 </style>
