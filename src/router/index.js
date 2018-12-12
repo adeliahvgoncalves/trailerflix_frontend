@@ -39,5 +39,5 @@ export default new Router({
       name: 'trailer',
       component: AppTrailer 
     }
-  ]
+  ],
 })

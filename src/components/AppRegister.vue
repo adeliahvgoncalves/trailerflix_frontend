@@ -8,7 +8,7 @@
                         <v-container style="position: relative;top: 13%;" class="text-xs-center">
                             <v-card flat>
                                 <v-card-title primary-title>
-                                    <h4>Registration</h4>
+                                    <h3>Registration</h3>
                                 </v-card-title>
                                 <v-card-text>
                                     <v-form>
@@ -20,7 +20,7 @@
                                         <v-card-actions>
                                             <div>
                                             <router-link to="/">
-                                                <v-btn color="purple" dark>Back</v-btn>
+                                                <v-btn color="purple" style="margin-right: 20px" dark>Back</v-btn>
                                             </router-link>
                                             </div>
                                             <div>
